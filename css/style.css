@@ -1,0 +1,120 @@
+body header {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+body {
+    background-color: rgb(222, 222, 222);
+}
+
+body p {
+    font-size: 16px;
+}
+
+.pricing {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.card {
+    width: 350px;
+    border-radius: 15px 15px 0px 0px;
+    z-index: -1;
+}
+
+.card header {
+    background-color: #288080;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.about header h3 {
+    font-size: 2.5em;
+    margin: 0.5em auto;
+}
+
+.about ul li, .about button {
+    font-size: 16px;
+}
+
+.card ul header:first-child {
+    background-color: white;
+}
+
+.card ul h4 {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    row-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery img {
+    width: 200px;
+    border: solid thick #50C7C7;
+}
+
+@media screen and (min-width: 900px) {
+    body header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    header nav ul{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .pricing {
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+
+    #pricing {
+        margin-top: 10px;
+    }
+
+    .card {
+        width: 200px;
+    }
+}
+
+@media print {
+    nav ul {
+        display: flex;
+        width: 1vw;
+        justify-content: space-around;
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .pricing {
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+
+    #pricing {
+        margin-top: 10px;
+    }
+
+    .card {
+        width: 200px;
+        border: solid 2px #50C7C7;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: "👍";
+    }
+}
